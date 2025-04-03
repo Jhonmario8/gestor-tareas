@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestor De Tareas</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="list">
+            <li class="list__item"><a href="Tareas.html" class="list__link">Tareas</a></li>
+            <li class="list__item"><a href="Crear.html" class="list__link">Crear</a></li>
+            <li class="list__item"><a href="Actualizar.html" class="list__link">Actualizar</a></li>
+            <li class="list__item"><a href="Borrar.html" class="list__link">Borrar</a></li>
+        </ul>
+    </nav>
+</header>
+    <form action="">
+        <label for="title">Titulo: </label>
+        <input type="text" id="title" placeholder="Ingrese el titulo" required>
+        <label for="description">Descripcion: </label>
+        <input type="text" id="description" placeholder="Ingrese la descripcion" required>
+        <label for="complete">Completada</label>
+        <input type="checkbox" id="complete" >
+        <button id="boton">Enivar</button>
+    </form>
+
+<script src="crearJS.js"></script>
+</body>
+</html>

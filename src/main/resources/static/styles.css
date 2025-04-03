@@ -1,0 +1,113 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #111;
+    color: #ededed;
+}
+
+.list{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    background-color: #395;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    gap: 60px;
+}
+
+.list__link{
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #000;
+    margin: 5px;
+    padding: 15px;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    transition: color .3s, font-size .5s;
+}
+.list__link:hover{
+    color: #aaa;
+    font-size: 1.3rem;
+}
+
+h1{
+    text-align: center;
+
+}
+table{
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+    gap: 5px;
+}
+th{
+    border-top: 4px solid #339955;
+    border-bottom: 3px solid #339955;
+    padding: 20px;
+}
+td{
+    padding: 20px;
+    border-bottom: 3px solid #aaa;
+}
+
+form{
+    box-sizing: border-box;
+    background: linear-gradient(#339955,#000);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 60vw;
+    height: 500px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+label{
+    margin: 15px;
+}
+input{
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #aaaaaa;
+    transition: border-bottom-color .3s ;
+    color: #aaa;
+}
+input:hover{
+    border-bottom-color: #ededed;
+}
+input:focus{
+    outline: none;
+}
+button{
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    background-color: #339955;
+    border: 1px solid #222;
+    border-radius: 6px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    accent-color: #339955;
+    margin-bottom: 30px;
+}
+
+.opc{
+    text-decoration: none;
+    color: #ededed;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ededed;
+}
