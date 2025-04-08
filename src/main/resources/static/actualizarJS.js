@@ -4,9 +4,14 @@ boton.addEventListener("click",async (e)=>{
     const id=document.getElementById("id").value
     try {
         let res= await fetch(`http://localhost:8080/tasks/search/${id}`)
+            if(res.status===404){
+                alert("La tarea no se encontro")
+                return
+            }
             if (!res.ok){
                 throw new Error(`Erro al obtener la tarea: ${res.status}`)
             }
+            console.log(res)
             let task= await res.json()
             let form =document.getElementById("form")
             form.innerHTML=""
