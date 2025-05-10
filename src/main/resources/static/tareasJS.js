@@ -8,14 +8,34 @@ async function  getData(){
         const tabla=document.getElementById("Tabla-tareas")
         json.forEach(task=>{
             let row =document.createElement("tr")
+
             row.innerHTML=`
         <td>${task.id}</td>
         <td>${task.titulo}</td>
         <td>${task.descripcion}</td>
-        <td>${task.completada?"Si":"No"}</td>
+        <td><input type="checkbox" ${task.completada?"checked":""}></td>
         <td><a href="#" class="opc" data-id="${task.id}">Borrar</a></td>
       
         `
+            row.querySelector("input").addEventListener("click",async e=>{
+
+                try{
+                    let resp=await fetch(`http://localhost:8080/tasks/update/${task.id}`,{
+                        method:"PUT",
+                        headers:{"Content-Type":"application/json"},
+                        body:JSON.stringify({
+                            titulo: task.titulo,
+                            descripcion: task.descripcion,
+                            completada: e.target.checked
+                        })
+                    })
+                    if (!resp.ok){
+                        throw new Error("Error al actualizar la tarea")
+                    }
+                }catch (e){
+                    console.error(e)
+                }
+            })
             tabla.appendChild(row)
 
             document.querySelectorAll(".opc").forEach(link =>{
