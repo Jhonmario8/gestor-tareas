@@ -3,8 +3,10 @@ body{
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    background-color: #111;
+    height: 100vh;
+    background: linear-gradient(160deg, #071739,#4b6382,#a4b5c4 140%);
     color: #ededed;
+    animation: aparecer-body 2s ease;
 }
 
 .list{
@@ -12,53 +14,57 @@ body{
     list-style: none;
     margin: 0;
     padding: 20px;
-    background-color: #395;
+    background: linear-gradient(to right,#cdd5db -30%,#e3c39d 10%,#a68868 50%, #e3c39d 90%,#cdd5db 120%);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70px;
     gap: 60px;
+    animation: aparecer .5s ease-in-out ;
 }
 
 .list__link{
+    display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
-    color: #000;
+    color: #4b6382;
     margin: 5px;
     padding: 15px;
     letter-spacing: 1px;
     font-size: 1.2rem;
-    transition: color .3s, font-size .5s;
+    transition: transform .3s, color .2s;
+
 }
 .list__link:hover{
-    color: #aaa;
-    font-size: 1.3rem;
+    transform: scale(1.1) translateY(-2px);
 }
 
 h1{
     text-align: center;
-
+    color: #cdd5db;
 }
 table{
     margin: auto;
     text-align: center;
-    width: 100vw;
+    width: 80vw;
+    border-radius: 10px;
+    border: 3px solid #a68868;
 
 }
 th{
-    border-top: 4px solid #339955;
-    border-bottom: 3px solid #339955;
+
     padding: 20px;
+    color: #cdd5db;
 }
 td{
+    border-top: 3px solid #a68868;
     padding: 20px;
-    border-bottom: 3px solid #aaa;
-
+    color: #cdd5db;
 }
 
 form{
     box-sizing: border-box;
-    background: linear-gradient(#339955,#000);
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -68,6 +74,7 @@ form{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 0 1px 15px #a4b5c466;
 }
 label{
     margin: 15px;
@@ -78,32 +85,40 @@ input{
     margin: 10px;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #aaaaaa;
+    border-bottom: 2px solid #a68868;
     transition: border-bottom-color .3s ;
-    color: #aaa;
+    color: #e3c39d;
 }
 input:hover{
-    border-bottom-color: #ededed;
+    border-bottom-color: #e3c39d;
 }
 input:focus{
     outline: none;
 }
+input::placeholder{
+    color: #a68868;
+}
 button{
     padding: 10px 20px;
     letter-spacing: 2px;
-    background-color: #339955;
+    background-color: #e3c39d;
     border: 1px solid #222;
     border-radius: 6px;
     text-transform: uppercase;
-    color: #fff;
+    color: #4b6382;
+    transition: transform .3s;
+}
+button:hover{
+    transform: scale(1.2) translateY(-5px);
+    cursor: pointer;
 }
 
 input[type=checkbox] {
     width: 20px;
     height: 20px;
-    accent-color: #339955;
+    accent-color: #e3c39d;
     margin-bottom: 30px;
-    border: 2px solid #339955;
+    border: 2px solid #a68868;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -116,19 +131,37 @@ input[type=checkbox]:hover {
 }
 
 input[type=checkbox]:checked {
-    background-color: #339955;
-    border-color: #2a7a44;
+    background-color: #a68868;
+    border-color: #a68868;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .opc{
+    display: inline-block;
     text-decoration: none;
-    color: #ededed;
+    color: #e3c39d;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ededed;
-    transition: padding .3s ease ;
+    border: 1px solid #e3c39d;
+    transition: transform .3s ;
 }
 .opc:hover{
-    padding: 12px;
+    transform: scale(1.1) translateY(-2px);
+    cursor: pointer;
+}
+
+
+@keyframes aparecer {
+    from{
+        transform: translateY(-100px);
+    }to{
+        transform: translateY(0);
+         }
+}
+@keyframes aparecer-body {
+    from{
+        opacity: 0;
+    }to{
+    opacity: 1;
+         }
 }
